@@ -11,7 +11,6 @@
       if ($scope.postBody) {
 
         PostSrvc.create({
-          username: 'dickeyxxx',
           body: $scope.postBody
         }).success(function (post) {
 

@@ -1,4 +1,4 @@
-var Post = require('../../models/Post');
+var Post = require('../../models/post');
 var router = require('express').Router();
 
 router.get('/', function (req, res) {
@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res, next) {
 
   var post = new Post({
-    username: req.body.username,
+    username: req.auth.username,
     body: req.body.body
   });
 

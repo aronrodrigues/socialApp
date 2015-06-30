@@ -7,9 +7,12 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
+app.use(require('./auth'));
 app.use('/api', router);
 
 router.use('/posts', require('./controllers/api/posts'));
+router.use('/sessions', require('./controllers/api/sessions'));
+router.use('/users', require('./controllers/api/users'));
 
 app.use('', require('./controllers/static'));
 //app.get('/', express.static(__dirname + '/web/'));
