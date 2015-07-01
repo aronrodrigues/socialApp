@@ -19,6 +19,11 @@
       });
     };
 
+    srvc.logout = function () {
+      srvc.token = null;
+      delete $http.defaults.headers.common['X-Auth'];
+    };
+
     return srvc;
 
   });
