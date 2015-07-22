@@ -10,7 +10,7 @@ gulp.task('nodemon', function () {
   nodemon({
     script: 'server.js',
     ext: 'js',
-    ignore: ['ng*', 'gulp*', 'css']
+    ignore: ['ng/', 'gulp/', 'css/', 'node_modules']
   });
 });
 
