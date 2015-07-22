@@ -12,7 +12,7 @@ router.post('/', function (req, res, next) {
     user.save(function (err) {
       if (err) { return next(err); }
       return res.status(201).send();
-    })
+    });
     
   });
 });
