@@ -13,7 +13,7 @@ describe('posts.svc', function () {
 
 	afterEach(function () {
 		$httpBackend.flush();
-	})
+	});
 
 	describe('#fetch', function () {
 
@@ -32,6 +32,20 @@ describe('posts.svc', function () {
 		it('gets 2 posts', function () {
 			PostSrvc.fetch().success(function (posts) {
 				expect(posts).to.have.length(2);
+			});
+		});
+	});
+
+	describe('#create', function () {
+
+		beforeEach(function () {
+			$httpBackend.expect('POST', '/api/posts')
+			.respond({ username: 'aronrodrigues', body: 'created post' });
+		});
+
+		it('gets 2 posts', function () {
+			PostSrvc.create({ body: 'sample body' }).success(function (post) {
+				expect(post.body).to.be.equals('created post');
 			});
 		});
 	});
