@@ -17,6 +17,7 @@
     "ws": "^0.7.2"
   },
   "scripts": {
+    "start": "node server.js",
     "postinstall": "gulp build",
     "configureprotractor": "webdriver-manager update"
   },
