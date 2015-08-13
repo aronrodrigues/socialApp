@@ -10,9 +10,9 @@
 
         PostSrvc.create({
           body: $scope.postBody
-        }).then(function (post) {
+        }).then(function (res) {
 
-          $scope.posts.unshift(post);
+          $scope.posts.unshift(res.data);
           $scope.postBody = null;
 
         });
@@ -22,8 +22,8 @@
     };
 
     function activate() {
-      PostSrvc.fetch().then(function (posts) {
-        $scope.posts = posts;
+      PostSrvc.fetch().then(function (res) {
+        $scope.posts = res.data;
       });
     }
 
