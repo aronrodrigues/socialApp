@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/socialApp', function (err) {
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/socialApp', function (err) {
   if (err) {
     console.log(err)
   } else {
