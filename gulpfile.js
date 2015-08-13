@@ -15,3 +15,5 @@ gulp.task('nodemon', function () {
 });
 
 gulp.task('run',  ['watch:css', 'watch:js', 'nodemon']);
+
+gulp.task('build', ['css', 'js']);
